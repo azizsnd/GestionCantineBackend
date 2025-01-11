@@ -4,8 +4,6 @@ import {
   IsIn,
   IsNotEmpty,
   IsString,
-  Matches,
-  MinLength,
 } from 'class-validator';
 
 export class CreateUserDto {
@@ -17,6 +15,8 @@ export class CreateUserDto {
   @IsNotEmpty({ message: 'UserName est obligatoire.' })
   userName: string;
 
+  @IsString()
+  @IsNotEmpty({ message: 'password est obligatoire.' })
   password: string;
 
   @ApiProperty({

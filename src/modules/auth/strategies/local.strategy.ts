@@ -8,15 +8,15 @@ import { AuthDto } from '../dto/auth.dto';
 export class LocalStrategy extends PassportStrategy(Strategy) {
   constructor(private authService: AuthService) {
     super({
-      usernameField: 'email', // Use 'email' instead of the default 'username'
+      usernameField: 'userName', // Use 'userName' instead of the default 'username'
     });
   }
 
-  async validate(email: string, password: string): Promise<any> {
+  async validate(userName: string, password: string): Promise<any> {
 
-    const user = await this.authService.validateUser({ email, password });
+    const user = await this.authService.validateUser({ userName, password });
     if (!user) {
-      throw new UnauthorizedException('Invalid email or password');
+      throw new UnauthorizedException('Invalid userName or password');
     }
     return user;
   }

@@ -13,12 +13,10 @@ export class AuthService {
   ) {}
 
   async validateUser(authDto: AuthDto) {
-    const user = await this.userService.findEmail(authDto.email);
+    const user = await this.userService.findUserName(authDto.userName);
     if (!user) {
       throw new UnauthorizedException('Invalid credentials');
     }
-
-    // Comparer le mot de passe fourni avec le mot de passe hashé
     const isPasswordValid = await bcrypt.compare(
       authDto.password,
       user.password,
@@ -27,14 +25,14 @@ export class AuthService {
       throw new UnauthorizedException('Invalid credentials');
     }
 
-    return user; // Utilisateur authentifié
+    return user; 
   }
 
   async login(user: User) {
-    const payload = { username: user.fullName, sub: user.id, role: user.role };
+    const payload = { userName: user.userName, sub: user.id, role: user.role };
     return {
       access_token: this.jwtService.sign(payload, {
-        secret: process.env.JWT_SECRET || 'your secret key', // Ensure this matches
+        secret: process.env.JWT_SECRET || 'your secret key', 
       }),
     };
   }

@@ -28,6 +28,7 @@ import { RatingModule } from './modules/rating/rating.module';
       autoLoadEntities: true,
       //synchronize: true,
       timezone: 'Z',
+      
     }),
     DishModule,
     RatingModule,

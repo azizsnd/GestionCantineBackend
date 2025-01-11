@@ -1,9 +1,7 @@
 import {
-  IsEmail,
   IsIn,
   IsNotEmpty,
   IsString,
-  Matches,
   MinLength,
 } from 'class-validator';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';

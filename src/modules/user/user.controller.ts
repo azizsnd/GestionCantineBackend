@@ -13,10 +13,12 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { Roles } from 'src/common/decorators/roles.decorator';
 import { ChangePasswordDto } from './dto/change-password.dto';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { Public } from 'src/common/decorators/public.decorator';
 
-@ApiTags('Users :(Only admins can access this endpoints)')  
+@ApiTags('Users')  
 @ApiBearerAuth()
 @Controller('user')
+@Public()
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
