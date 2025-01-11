@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : sam. 11 jan. 2025 à 14:19
+-- Généré le : sam. 11 jan. 2025 à 20:08
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -41,9 +41,14 @@ CREATE TABLE `dish` (
 --
 
 INSERT INTO `dish` (`id`, `name`, `quantity`, `checked`, `imageUrl`, `type`) VALUES
-(1, 'Dish 1', 10, 0, 'http://example.com/image.jpg', 'Main Course'),
-(2, 'Dish 2', 10, 0, 'http://example.com/image.jpg', 'Main Course'),
-(3, 'Dish 2', 10, 0, 'http://example.com/image.jpg', 'Main Course');
+(1, 'Dish 1', 10, 0, '/images/plat.png', 'Main Course'),
+(2, 'Dish 2', 10, 0, '/images/plat.png', 'Main Course'),
+(3, 'Dish 2', 10, 0, '/images/plat.png', 'Main Course'),
+(4, 'Dish 2', 10, 0, '/images/plat.png', 'Main Course'),
+(5, 'Dish 4', 50, 1, '/images/plat.png', 'Main Course'),
+(6, 'Dish 7', 50, 1, '/images/plat.png', 'Main Course'),
+(7, 'Dish Appetizers', 50, 1, '/images/plat.png', 'Appetizers'),
+(8, 'Dish Desserts', 50, 1, '/images/plat.png', 'Desserts');
 
 -- --------------------------------------------------------
 
@@ -66,7 +71,9 @@ CREATE TABLE `rating` (
 INSERT INTO `rating` (`id`, `nbStars`, `feedback`, `idDish`, `idUser`) VALUES
 (1, 4, 'Excellent dish!', 3, 1),
 (2, 1, 'Excellent dish!', 2, 1),
-(3, 1, 'Excellent dish!', 2, 1);
+(3, 1, 'Excellent dish!', 2, 1),
+(4, 5, 'Excellent dish!', 2, 1),
+(5, 5, 'Excellent dish!', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -120,13 +127,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `dish`
 --
 ALTER TABLE `dish`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT pour la table `rating`
 --
 ALTER TABLE `rating`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `user`
