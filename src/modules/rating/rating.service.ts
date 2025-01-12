@@ -113,7 +113,7 @@ export class RatingService {
         .getRawOne();
   
       if (!result || result.averageRating === null) {
-        throw new NotFoundException(`No ratings found for dish with id ${idDish}`);
+        result.averageRating=0;
       }
   
       return parseFloat(result.averageRating);
