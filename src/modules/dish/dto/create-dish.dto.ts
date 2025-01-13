@@ -33,7 +33,6 @@ export class CreateDishDto {
         example: 'http://example.com/image.jpg',
     })
     @IsNotEmpty({ message: 'L\'URL de l\'image est obligatoire.' })
-    @IsUrl()
     imageUrl: string;
 
     @ApiProperty({
