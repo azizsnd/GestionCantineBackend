@@ -20,7 +20,7 @@ export class CreateUserDto {
   password: string;
 
   @ApiProperty({
-    description: 'The role of the user (admin, student, or club)',
+    description: 'The role of the user (admin, student)',
     example: 'admin',
     enum: ['admin', 'student'],
   })

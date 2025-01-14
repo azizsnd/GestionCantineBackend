@@ -9,9 +9,9 @@ import { HttpExceptionFilter } from './common/filters/http-exception.filter';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
     app.enableCors({
-      origin: '*', // Allow requests from your Angular app
-      methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Allowed HTTP methods
-      credentials: true, // Allow cookies and credentials
+      origin: '*', 
+      methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', 
+      credentials: true, 
     });
   app.use('/uploads', express.static(join(__dirname, '..', 'uploads')));
   app.useGlobalFilters(new HttpExceptionFilter());

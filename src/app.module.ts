@@ -26,7 +26,6 @@ import { RatingModule } from './modules/rating/rating.module';
       password: process.env.DB_PASSWORD,
       database: process.env.DB_DATABASE,
       autoLoadEntities: true,
-      //synchronize: true,
       timezone: 'Z',
       
     }),
